@@ -1,12 +1,10 @@
-export default function MarqueeTicker() {
-  const items = [
-    { text: "Ciclo de Vida del Software (SDLC)", badge: "360°" },
-    { text: "Arquitectura Cloud & Microservicios" },
-    { text: "Desarrollo SaaS & Web con Next.js 16" },
-    { text: "Apps Móviles Nativas (iOS & Android)" },
-    { text: "CI/CD & DevOps Automatizado", badge: "ZERO DOWNTIME" },
-    { text: "Código 100% de tu Propiedad" },
-  ];
+import { getTranslations } from "next-intl/server";
+
+type MarqueeItem = { text: string; badge?: string };
+
+export default async function MarqueeTicker() {
+  const t = await getTranslations("Marquee");
+  const items = t.raw("items") as MarqueeItem[];
 
   return (
     <div className="w-full border-y border-brand-border bg-white py-4 overflow-hidden select-none">

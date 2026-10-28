@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations("Header");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -21,14 +24,14 @@ export default function Header() {
           {/* Desktop Logo */}
           <img
             src="/logotipo-1.png"
-            alt="DevTools Logotipo"
+            alt={t("logoAlt")}
             className="hidden sm:block h-11 sm:h-12 lg:h-14 w-auto object-contain"
           />
           {/* Mobile Logo */}
           <div className="flex sm:hidden items-center gap-2.5 font-display font-black text-2xl tracking-tighter text-brand-navy">
             <img
               src="/isotipo-1.png"
-              alt="DevTools Isotipo"
+              alt={t("isotypeAlt")}
               className="h-9 w-auto object-contain"
             />
             <span>DEVTOOLS</span>
@@ -44,25 +47,25 @@ export default function Header() {
             href="#servicios"
             className="hover:text-brand-navy transition-colors"
           >
-            Servicios
+            {t("nav.services")}
           </a>
           <a
             href="#disponibilidad"
             className="hover:text-brand-navy transition-colors"
           >
-            Disponibilidad
+            {t("nav.availability")}
           </a>
           <a
             href="#metodologia"
             className="hover:text-brand-navy transition-colors"
           >
-            Método SDLC
+            {t("nav.methodology")}
           </a>
           <a href="#casos" className="hover:text-brand-navy transition-colors">
-            Casos
+            {t("nav.cases")}
           </a>
           <a href="#faq" className="hover:text-brand-navy transition-colors">
-            FAQ
+            {t("nav.faq")}
           </a>
         </nav>
 
@@ -71,14 +74,15 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-light border border-brand-border">
             <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></span>
             <span className="font-mono text-[11px] text-brand-navy font-medium">
-              Q3/Q4 · 2 CUPOS SDLC
+              {t("slotsBadge")}
             </span>
           </div>
+          <LanguageSwitcher />
           <a
             href="#contacto"
             className="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-brand-lime text-brand-navy font-display font-bold text-xs uppercase tracking-wider hover:opacity-95 hover:shadow-lg transition-all"
           >
-            <span>Diagnóstico Tech</span>
+            <span>{t("cta")}</span>
             <span className="material-symbols-outlined text-[16px]">
               arrow_forward
             </span>
@@ -88,7 +92,7 @@ export default function Header() {
           <button
             type="button"
             onClick={toggleMenu}
-            aria-label="Abrir menú"
+            aria-label={t("openMenu")}
             className="md:hidden p-2 rounded-xl text-brand-navy hover:bg-brand-light transition-colors focus:outline-none"
           >
             <span className="material-symbols-outlined text-[26px] block">
@@ -109,7 +113,7 @@ export default function Header() {
         <div className="flex items-center justify-between px-3 py-2 rounded-full bg-brand-light border border-brand-border w-fit">
           <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></span>
           <span className="font-mono text-[11px] text-brand-navy font-medium">
-            Q3/Q4 · 2 CUPOS SDLC DISPONIBLES
+            {t("slotsBadgeMobile")}
           </span>
         </div>
 
@@ -119,7 +123,7 @@ export default function Header() {
             onClick={closeMenu}
             className="py-2 border-b border-brand-border/40 hover:text-brand-slate transition-colors flex items-center justify-between"
           >
-            <span>Servicios</span>
+            <span>{t("nav.services")}</span>
             <span className="material-symbols-outlined text-xs">chevron_right</span>
           </a>
           <a
@@ -127,7 +131,7 @@ export default function Header() {
             onClick={closeMenu}
             className="py-2 border-b border-brand-border/40 hover:text-brand-slate transition-colors flex items-center justify-between"
           >
-            <span>Disponibilidad</span>
+            <span>{t("nav.availability")}</span>
             <span className="material-symbols-outlined text-xs">chevron_right</span>
           </a>
           <a
@@ -135,7 +139,7 @@ export default function Header() {
             onClick={closeMenu}
             className="py-2 border-b border-brand-border/40 hover:text-brand-slate transition-colors flex items-center justify-between"
           >
-            <span>Método SDLC</span>
+            <span>{t("nav.methodology")}</span>
             <span className="material-symbols-outlined text-xs">chevron_right</span>
           </a>
           <a
@@ -143,7 +147,7 @@ export default function Header() {
             onClick={closeMenu}
             className="py-2 border-b border-brand-border/40 hover:text-brand-slate transition-colors flex items-center justify-between"
           >
-            <span>Casos</span>
+            <span>{t("nav.cases")}</span>
             <span className="material-symbols-outlined text-xs">chevron_right</span>
           </a>
           <a
@@ -151,17 +155,20 @@ export default function Header() {
             onClick={closeMenu}
             className="py-2 border-b border-brand-border/40 hover:text-brand-slate transition-colors flex items-center justify-between"
           >
-            <span>FAQ</span>
+            <span>{t("nav.faq")}</span>
             <span className="material-symbols-outlined text-xs">chevron_right</span>
           </a>
         </nav>
+
+        <LanguageSwitcher className="self-start" />
+
 
         <a
           href="#contacto"
           onClick={closeMenu}
           className="w-full text-center py-4 rounded-full bg-brand-lime text-brand-navy font-display font-bold text-[13px] uppercase tracking-wider shadow-md flex items-center justify-center gap-2 mt-auto mb-4"
         >
-          <span>Agendar Diagnóstico Tech</span>
+          <span>{t("ctaMobile")}</span>
           <span className="material-symbols-outlined text-[16px]">
             arrow_forward
           </span>

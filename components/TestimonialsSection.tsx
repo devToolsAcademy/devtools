@@ -1,86 +1,77 @@
-export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      quote:
-        "“DevTools no solo construyó nuestro MVP a tiempo, sino que estableció la arquitectura y buenas prácticas que nuestro equipo in-house sigue utilizando hoy.”",
-      name: "Alejandro Morales",
-      role: "Founder @ NexusLog",
-      initials: "AM",
-      featured: false,
-    },
-    {
-      quote:
-        "“Buscábamos un aliado técnico capaz de asumir todo el ciclo de vida de nuestro producto digital. DevTools redujo nuestros costos de infraestructura un 50%.”",
-      name: "Camila Valenzuela",
-      role: "VP Engineering @ FinGrid",
-      initials: "CV",
-      featured: true,
-    },
-    {
-      quote:
-        "“La documentación técnica, los tests automatizados y el traspaso de código fueron impecables. Cero sorpresas y 100% de cumplimiento en los plazos.”",
-      name: "Sebastián Godoy",
-      role: "Product Director @ OmniDesk",
-      initials: "SG",
-      featured: false,
-    },
-  ];
+import { getTranslations } from "next-intl/server";
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  initials: string;
+};
+
+// The featured (lime) card is a visual choice, independent of language.
+const FEATURED_INDEX = 1;
+
+export default async function TestimonialsSection() {
+  const t = await getTranslations("Testimonials");
+  const testimonials = t.raw("items") as Testimonial[];
 
   return (
     <section className="max-w-[1240px] mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-brand-border">
       <div className="mb-8 sm:mb-12">
         <span className="font-mono text-xs uppercase tracking-widest text-brand-slate block mb-2">
-          CLIENTES &amp; EQUIPOS
+          {t("eyebrow")}
         </span>
         <h2 className="font-display font-extrabold text-3xl sm:text-6xl uppercase tracking-tight text-brand-navy">
-          CONSTRUIR MEJOR, JUNTOS.
+          {t("title")}
         </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-        {testimonials.map((t, idx) => (
-          <div
-            key={idx}
-            className={`p-6 sm:p-8 rounded-3xl flex flex-col justify-between ${
-              t.featured
-                ? "bg-brand-lime border border-brand-lime shadow-lg"
-                : "bg-white border border-brand-border shadow-sm"
-            }`}
-          >
-            <p
-              className={`text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 ${
-                t.featured
-                  ? "text-brand-navy font-medium"
-                  : "text-brand-navy font-normal"
+        {testimonials.map((item, idx) => {
+          const featured = idx === FEATURED_INDEX;
+          return (
+            <div
+              key={idx}
+              className={`p-6 sm:p-8 rounded-3xl flex flex-col justify-between ${
+                featured
+                  ? "bg-brand-lime border border-brand-lime shadow-lg"
+                  : "bg-white border border-brand-border shadow-sm"
               }`}
             >
-              {t.quote}
-            </p>
-            <div className="flex items-center gap-3">
-              <div
-                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold font-mono text-xs ${
-                  t.featured
-                    ? "bg-brand-navy text-white"
-                    : "bg-brand-light border border-brand-border text-brand-navy"
+              <p
+                className={`text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 ${
+                  featured
+                    ? "text-brand-navy font-medium"
+                    : "text-brand-navy font-normal"
                 }`}
               >
-                {t.initials}
-              </div>
-              <div>
-                <div className="font-display font-bold text-xs sm:text-sm text-brand-navy">
-                  {t.name}
-                </div>
+                {item.quote}
+              </p>
+              <div className="flex items-center gap-3">
                 <div
-                  className={`font-mono text-[11px] ${
-                    t.featured ? "text-brand-navy/70" : "text-brand-slate"
+                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold font-mono text-xs ${
+                    featured
+                      ? "bg-brand-navy text-white"
+                      : "bg-brand-light border border-brand-border text-brand-navy"
                   }`}
                 >
-                  {t.role}
+                  {item.initials}
+                </div>
+                <div>
+                  <div className="font-display font-bold text-xs sm:text-sm text-brand-navy">
+                    {item.name}
+                  </div>
+                  <div
+                    className={`font-mono text-[11px] ${
+                      featured ? "text-brand-navy/70" : "text-brand-slate"
+                    }`}
+                  >
+                    {item.role}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

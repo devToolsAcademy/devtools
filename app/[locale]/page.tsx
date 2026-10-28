@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MarqueeTicker from "@/components/MarqueeTicker";
@@ -13,7 +14,14 @@ import Footer from "@/components/Footer";
 import ScrollCanvasSequence from "@/components/ScrollCanvasSequence";
 import ScrollReveal from "@/components/ScrollReveal";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />

@@ -1,0 +1,289 @@
+{
+  "Metadata": {
+    "titleDefault": "DevTools | Soluciones Tecnológicas y Ciclo de Vida del Software",
+    "titleTemplate": "%s | DevTools",
+    "description": "Estudio de ingeniería de software especializado en el desarrollo a medida, arquitectura escalable y gestión integral del ciclo de vida del software.",
+    "keywords": [
+      "DevTools",
+      "Desarrollo de Software",
+      "Ingeniería de Software",
+      "Ciclo de Vida del Software",
+      "SaaS",
+      "Next.js",
+      "Arquitectura Cloud",
+      "Desarrollo Web",
+      "Apps Móviles"
+    ],
+    "ogDescription": "Ingeniería de software a medida, arquitectura limpia y acompañamiento completo en todo el ciclo de vida del software.",
+    "twitterTitle": "DevTools | Soluciones Tecnológicas",
+    "twitterDescription": "Transformamos ideas en productos digitales escalables y de alta calidad."
+  },
+  "LanguageSwitcher": {
+    "label": "Cambiar idioma",
+    "es": "Español",
+    "en": "English"
+  },
+  "Header": {
+    "logoAlt": "DevTools Logotipo",
+    "isotypeAlt": "DevTools Isotipo",
+    "nav": {
+      "services": "Servicios",
+      "availability": "Disponibilidad",
+      "methodology": "Método SDLC",
+      "cases": "Casos",
+      "faq": "FAQ"
+    },
+    "slotsBadge": "Q3/Q4 · 2 CUPOS SDLC",
+    "slotsBadgeMobile": "Q3/Q4 · 2 CUPOS SDLC DISPONIBLES",
+    "cta": "Diagnóstico Tech",
+    "ctaMobile": "Agendar Diagnóstico Tech",
+    "openMenu": "Abrir menú"
+  },
+  "Hero": {
+    "metricsEyebrow": "MÉTRICAS SDLC // DEVTOOLS",
+    "metricsTitle": "Calidad & Despliegue",
+    "timeToMarket": "Time-To-Market",
+    "uptime": "Uptime",
+    "coverage": "Coverage",
+    "ctaPrimary": "Iniciar Proyecto",
+    "ctaSecondary": "Ver Soluciones",
+    "titleLine1": "INGENIERÍA",
+    "titleLine2": "DE SOFTWARE.",
+    "intro": "En <strong>DevTools</strong> transformamos necesidades complejas en soluciones tecnológicas robustas. Gestionamos <strong>todo el ciclo de vida del software</strong>: desde la arquitectura inicial hasta el despliegue y mantenimiento continuo.",
+    "pillLifecycle": "Ciclo de Vida 360°",
+    "pillSprints": "Sprints Ágiles"
+  },
+  "Marquee": {
+    "items": [
+      { "text": "Ciclo de Vida del Software (SDLC)", "badge": "360°" },
+      { "text": "Arquitectura Cloud & Microservicios" },
+      { "text": "Desarrollo SaaS & Web con Next.js 16" },
+      { "text": "Apps Móviles Nativas (iOS & Android)" },
+      { "text": "CI/CD & DevOps Automatizado", "badge": "ZERO DOWNTIME" },
+      { "text": "Código 100% de tu Propiedad" }
+    ]
+  },
+  "Manifesto": {
+    "eyebrow": "MANIFIESTO DEVTOOLS",
+    "titleLine1": "MÁS QUE CÓDIGO.",
+    "titleLine2": "INGENIERÍA PARA ESCALAR.",
+    "body": "En <brand>DevTools</brand> entendemos que el desarrollo de software no es un evento aislado, sino un <highlight>ciclo continuo de evolución, ingeniería rigurosa y valor de negocio.</highlight> Diseñamos soluciones tecnológicas robustas, mantenibles y listas para responder al crecimiento exponencial de tu empresa."
+  },
+  "Services": {
+    "eyebrow": "01 / CAPACIDADES TÉCNICAS",
+    "title": "SOLUCIONES TECNOLÓGICAS.",
+    "intro": "Cubrimos cada etapa del desarrollo de software con rigor de ingeniería, código limpio y estándares internacionales.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Desarrollo SaaS & Web Platforms",
+        "description": "Plataformas multi-tenant escalables, paneles administrativos interactivos e interfaces ultrarrápidas con Next.js 16, React 19 y PostgreSQL.",
+        "tags": "Next.js · TypeScript · Postgres",
+        "timeframe": "4-8 Semanas",
+        "icon": "web"
+      },
+      {
+        "number": "02",
+        "title": "Apps Móviles Nativas & Híbridas",
+        "description": "Experiencias móviles de alto rendimiento a 60fps con React Native o Flutter. Notificaciones push, biometría y sincronización offline.",
+        "tags": "React Native · iOS · Android",
+        "timeframe": "5-9 Semanas",
+        "icon": "smartphone"
+      },
+      {
+        "number": "03",
+        "title": "Arquitectura Cloud & DevOps",
+        "description": "Microservicios, infraestructura como código (Terraform), pipelines CI/CD automatizados y optimización de bases de datos de alta demanda.",
+        "tags": "AWS · GCP · Docker · K8s",
+        "timeframe": "3-6 Semanas",
+        "icon": "cloud"
+      },
+      {
+        "number": "04",
+        "title": "Gestión Integral del Ciclo de Vida (SDLC)",
+        "description": "Acompañamiento en discovery, especificaciones técnicas, refactorización de deuda técnica, auditorías de seguridad y mantenimiento evolutivo.",
+        "tags": "QA · SecOps · Code Audit",
+        "timeframe": "Continuo",
+        "icon": "published_with_changes"
+      }
+    ]
+  },
+  "Availability": {
+    "eyebrow": "SLOTS & DISPONIBILIDAD // CAPACIDAD",
+    "title": "CALENDARIO DE SPRINTS.",
+    "intro": "Garantizamos atención directa de ingenieros de software sénior limitando los proyectos activos por trimestre.",
+    "modality": "MODALIDAD",
+    "duration": "DURACIÓN",
+    "reserve": "Reservar Slot",
+    "slots": [
+      {
+        "title": "Sprint MVP Inicial",
+        "subtitle": "Lanzamiento rápido y validado",
+        "modality": "Remoto / Sync Diario",
+        "duration": "4 – 6 Semanas",
+        "status": "DISPONIBLE Q3"
+      },
+      {
+        "title": "Sprint SaaS Enterprise",
+        "subtitle": "Arquitectura multi-tenant completa",
+        "modality": "Equipo Dedicado Senior",
+        "duration": "8 – 12 Semanas",
+        "status": "1 CUPO RESTANTE"
+      },
+      {
+        "title": "Sprint Auditoría & SDLC Refactor",
+        "subtitle": "Eliminación de deuda técnica e infraestructura",
+        "modality": "Diagnóstico + Execution",
+        "duration": "3 – 4 Semanas",
+        "status": "RESERVA ANTICIPADA"
+      }
+    ]
+  },
+  "Methodology": {
+    "eyebrow": "02 / METODOLOGÍA SDLC",
+    "title": "CICLO DE VIDA DE SOFTWARE.",
+    "intro": "Proceso estructurado en 4 fases transparentes para asegurar previsibilidad, calidad y velocidad sin deuda técnica.",
+    "steps": [
+      {
+        "num": "01",
+        "time": "DÍA 1 – 3",
+        "title": "Discovery & Spec Técnica",
+        "description": "Definición clara del alcance, requisitos funcionales y no funcionales, arquitectura recomendada y cronograma semanal cerrado.",
+        "deliverable": "Tech Spec & Plan de Arquitectura"
+      },
+      {
+        "num": "02",
+        "time": "SEM 1 – 2",
+        "title": "Diseño & Prototipado",
+        "description": "Diseño de interfaz UI/UX en Figma, prototipo interactivo y definición de contratos de API antes de iniciar el código.",
+        "deliverable": "Figma Prototyped & DB Schema"
+      },
+      {
+        "num": "03",
+        "time": "SEM 3 – 6",
+        "title": "Desarrollo Ágil & Sprints",
+        "description": "Construcción modular en Next.js, TypeScript y servicios Cloud. Commits transparentes a tu repositorio y demos funcionales quincenales.",
+        "deliverable": "Demos en Staging & CI/CD Active"
+      },
+      {
+        "num": "04",
+        "time": "SEM 7+",
+        "title": "QA, Despliegue & SDLC Sync",
+        "description": "Pruebas de carga, análisis de seguridad, despliegue en producción y transferencia total de propiedad intelectual con soporte post-launch.",
+        "deliverable": "Traspaso 100% Repositorio + Docs"
+      }
+    ]
+  },
+  "CaseStudies": {
+    "eyebrow": "03 / HISTORIAS DE ÉXITO EN PRODUCCIÓN",
+    "title": "CASOS AUDITADOS.",
+    "intro": "Métricas reales de impacto entregadas a empresas tecnológicas de rápido crecimiento.",
+    "mainTag": "FINTECH B2B",
+    "mainDelivery": "ENTREGA EN 6 SEMANAS",
+    "mainTitle": "PaySync: -65% Latencia y 150k transacciones sin caídas.",
+    "mainQuote": "“DevTools diseñó e implementó la nueva arquitectura en 6 semanas. La calidad del código y la suite de pruebas superaron todas nuestras expectativas.”",
+    "mainAuthorInitials": "MR",
+    "mainAuthorName": "Matías Rojas",
+    "mainAuthorRole": "CTO en PaySync Technologies",
+    "secondary": [
+      {
+        "label": "LogiRoute // IoT & Telemetría",
+        "title": "-$45,000 USD/año en costes cloud",
+        "description": "Optimizamos la canalización de eventos en tiempo real y refactorizamos los microservicios core."
+      },
+      {
+        "label": "SalusCloud // HealthTech SaaS",
+        "title": "25,000 usuarios activos & 0 caídas",
+        "description": "Implementación de estándares HIPAA y arquitectura de base de datos resiliente ante picos de demanda."
+      }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "CLIENTES & EQUIPOS",
+    "title": "CONSTRUIR MEJOR, JUNTOS.",
+    "items": [
+      {
+        "quote": "“DevTools no solo construyó nuestro MVP a tiempo, sino que estableció la arquitectura y buenas prácticas que nuestro equipo in-house sigue utilizando hoy.”",
+        "name": "Alejandro Morales",
+        "role": "Founder @ NexusLog",
+        "initials": "AM"
+      },
+      {
+        "quote": "“Buscábamos un aliado técnico capaz de asumir todo el ciclo de vida de nuestro producto digital. DevTools redujo nuestros costos de infraestructura un 50%.”",
+        "name": "Camila Valenzuela",
+        "role": "VP Engineering @ FinGrid",
+        "initials": "CV"
+      },
+      {
+        "quote": "“La documentación técnica, los tests automatizados y el traspaso de código fueron impecables. Cero sorpresas y 100% de cumplimiento en los plazos.”",
+        "name": "Sebastián Godoy",
+        "role": "Product Director @ OmniDesk",
+        "initials": "SG"
+      }
+    ]
+  },
+  "Faq": {
+    "eyebrow": "04 / PREGUNTAS FRECUENTES",
+    "title": "RESPUESTAS DIRECTAS.",
+    "items": [
+      {
+        "q": "¿Qué abarca el servicio de gestión del ciclo de vida del software (SDLC)?",
+        "a": "DevTools cubre desde la fase conceptual (Discovery, definición de especificaciones y arquitectura), pasando por el desarrollo ágil en sprints, QA y despliegues automatizados, hasta la transferencia completa de propiedad y el mantenimiento evolutivo."
+      },
+      {
+        "q": "¿De quién es el código fuente y la propiedad intelectual?",
+        "a": "100% de tu empresa. Los repositorios de GitHub/GitLab se configuran bajo la organización de tu empresa desde el primer día. Firmamos acuerdos de cesión total de propiedad intelectual sin retención de derechos ni licencias ocultas."
+      },
+      {
+        "q": "¿Cuánto tiempo toma el desarrollo de un proyecto típico?",
+        "a": "Un MVP completo con especificación rigurosa toma entre 4 y 6 semanas. Proyectos SaaS enterprise o ecosistemas con aplicaciones móviles suelen tomar entre 8 y 12 semanas con entregables en staging cada 14 días."
+      },
+      {
+        "q": "¿Qué tecnologías y stacks utilizan?",
+        "a": "Nos especializamos en stacks de alto rendimiento y ecosistemas modernos: Next.js 16, React 19, TypeScript, Node.js / NestJS, Python (FastAPI), React Native, Flutter, PostgreSQL y servicios Cloud administrados en AWS y Google Cloud."
+      },
+      {
+        "q": "¿Ofrecen garantía y soporte tras el lanzamiento?",
+        "a": "Sí. Cada entrega incluye 30 días de garantía total sin costo para resolución de bugs o ajustes menores. Adicionalmente ofrecemos planes de acompañamiento mensual (Retainer SLA) para evolución continua."
+      }
+    ]
+  },
+  "Cta": {
+    "badge": "Slots SDLC Q3/Q4 disponibles",
+    "titleLine1": "TU PRÓXIMO",
+    "titleHighlight": "PROYECTO",
+    "titleLine3": "EMPIEZA AQUÍ.",
+    "body": "Cuéntanos tu requerimiento o agenda una sesión técnica de 15 minutos. Sin comerciales: hablarás directamente con un Tech Lead para analizar alcance y viabilidad técnica.",
+    "formTitle": "Diagnóstico en 15 Min",
+    "formSubtitle": "Respuesta con Tech Lead en menos de 2 horas hábiles.",
+    "nameLabel": "Nombre o Empresa",
+    "namePlaceholder": "DevTools Client",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "contacto@empresa.com",
+    "serviceLabel": "Servicio Requerido",
+    "serviceOptions": [
+      "Ciclo de Vida Completo (SDLC)",
+      "Plataforma SaaS / Aplicación Web",
+      "App Móvil (iOS & Android)",
+      "Arquitectura Cloud & DevOps"
+    ],
+    "submit": "Solicitar Propuesta",
+    "success": "✓ ¡Recibido! Nos contactaremos a la brevedad."
+  },
+  "Footer": {
+    "logoAlt": "DevTools Logotipo",
+    "tagline": "SOFTWARE THAT SCALES // FULL SDLC.",
+    "description": "Estudio de ingeniería de software a medida. Soluciones tecnológicas, arquitectura escalable y ciclo de vida de desarrollo integral.",
+    "navTitle": "Navegación",
+    "nav": {
+      "services": "Soluciones Tecnológicas",
+      "methodology": "Método Ciclo de Vida (SDLC)",
+      "availability": "Disponibilidad de Sprints",
+      "cases": "Casos de Éxito",
+      "faq": "Preguntas Frecuentes"
+    },
+    "contactTitle": "Contacto Directo",
+    "contactText": "¿Listo para acelerar tu producto sin deuda técnica? Habla directamente con nuestros ingenieros.",
+    "rights": "Todos los derechos reservados."
+  }
+}

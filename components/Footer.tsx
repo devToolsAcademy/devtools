@@ -1,4 +1,8 @@
-export default function Footer() {
+import { getTranslations } from "next-intl/server";
+
+export default async function Footer() {
+  const t = await getTranslations("Footer");
+
   return (
     <footer className="w-full border-t border-brand-border bg-white pt-12 sm:pt-16 pb-10 sm:pb-12">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
@@ -7,46 +11,46 @@ export default function Footer() {
           <div className="md:col-span-5">
             <img
               src="/logotipo-1.png"
-              alt="DevTools Logotipo"
+              alt={t("logoAlt")}
               className="h-12 sm:h-16 lg:h-20 w-auto object-contain mb-4"
             />
             <div className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-brand-slate mb-3 sm:mb-4">
-              SOFTWARE THAT SCALES // FULL SDLC.
+              {t("tagline")}
             </div>
             <p className="text-xs sm:text-sm text-brand-slate max-w-sm leading-relaxed">
-              Estudio de ingeniería de software a medida. Soluciones tecnológicas, arquitectura escalable y ciclo de vida de desarrollo integral.
+              {t("description")}
             </p>
           </div>
 
           {/* Column 2: Explore */}
           <div className="md:col-span-3">
             <div className="font-mono text-xs uppercase tracking-widest text-brand-navy font-bold mb-3 sm:mb-4">
-              Navegación
+              {t("navTitle")}
             </div>
             <ul className="space-y-2 font-body text-xs text-brand-slate">
               <li>
                 <a href="#servicios" className="hover:text-brand-navy transition-colors">
-                  Soluciones Tecnológicas
+                  {t("nav.services")}
                 </a>
               </li>
               <li>
                 <a href="#metodologia" className="hover:text-brand-navy transition-colors">
-                  Método Ciclo de Vida (SDLC)
+                  {t("nav.methodology")}
                 </a>
               </li>
               <li>
                 <a href="#disponibilidad" className="hover:text-brand-navy transition-colors">
-                  Disponibilidad de Sprints
+                  {t("nav.availability")}
                 </a>
               </li>
               <li>
                 <a href="#casos" className="hover:text-brand-navy transition-colors">
-                  Casos de Éxito
+                  {t("nav.cases")}
                 </a>
               </li>
               <li>
                 <a href="#faq" className="hover:text-brand-navy transition-colors">
-                  Preguntas Frecuentes
+                  {t("nav.faq")}
                 </a>
               </li>
             </ul>
@@ -55,10 +59,10 @@ export default function Footer() {
           {/* Column 3: Contact */}
           <div className="md:col-span-4">
             <div className="font-mono text-xs uppercase tracking-widest text-brand-navy font-bold mb-3 sm:mb-4">
-              Contacto Directo
+              {t("contactTitle")}
             </div>
             <p className="text-xs text-brand-slate leading-relaxed mb-3 sm:mb-4">
-              ¿Listo para acelerar tu producto sin deuda técnica? Habla directamente con nuestros ingenieros.
+              {t("contactText")}
             </p>
             <div className="font-mono text-xs font-bold text-brand-navy">
               contacto@devtools.tech
@@ -68,7 +72,7 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="pt-6 sm:pt-8 border-t border-brand-border/60 text-center sm:text-left text-[11px] sm:text-xs font-mono text-brand-slate">
-          © {new Date().getFullYear()} DevTools. Todos los derechos reservados.
+          © {new Date().getFullYear()} DevTools. {t("rights")}
         </div>
       </div>
     </footer>

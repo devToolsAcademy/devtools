@@ -1,56 +1,31 @@
-export default function ServicesSection() {
-  const services = [
-    {
-      number: "01",
-      title: "Desarrollo SaaS & Web Platforms",
-      description:
-        "Plataformas multi-tenant escalables, paneles administrativos interactivos e interfaces ultrarrápidas con Next.js 16, React 19 y PostgreSQL.",
-      tags: "Next.js · TypeScript · Postgres",
-      timeframe: "4-8 Semanas",
-      icon: "web",
-    },
-    {
-      number: "02",
-      title: "Apps Móviles Nativas & Híbridas",
-      description:
-        "Experiencias móviles de alto rendimiento a 60fps con React Native o Flutter. Notificaciones push, biometría y sincronización offline.",
-      tags: "React Native · iOS · Android",
-      timeframe: "5-9 Semanas",
-      icon: "smartphone",
-    },
-    {
-      number: "03",
-      title: "Arquitectura Cloud & DevOps",
-      description:
-        "Microservicios, infraestructura como código (Terraform), pipelines CI/CD automatizados y optimización de bases de datos de alta demanda.",
-      tags: "AWS · GCP · Docker · K8s",
-      timeframe: "3-6 Semanas",
-      icon: "cloud",
-    },
-    {
-      number: "04",
-      title: "Gestión Integral del Ciclo de Vida (SDLC)",
-      description:
-        "Acompañamiento en discovery, especificaciones técnicas, refactorización de deuda técnica, auditorías de seguridad y mantenimiento evolutivo.",
-      tags: "QA · SecOps · Code Audit",
-      timeframe: "Continuo",
-      icon: "published_with_changes",
-    },
-  ];
+import { getTranslations } from "next-intl/server";
+
+type Service = {
+  number: string;
+  title: string;
+  description: string;
+  tags: string;
+  timeframe: string;
+  icon: string;
+};
+
+export default async function ServicesSection() {
+  const t = await getTranslations("Services");
+  const services = t.raw("items") as Service[];
 
   return (
     <section className="max-w-[1240px] mx-auto px-4 sm:px-6 pb-16 sm:pb-28" id="servicios">
       <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
         <div>
           <span className="font-mono text-xs uppercase tracking-widest text-brand-slate block mb-2">
-            01 / CAPACIDADES TÉCNICAS
+            {t("eyebrow")}
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight text-brand-navy">
-            SOLUCIONES TECNOLÓGICAS.
+            {t("title")}
           </h2>
         </div>
         <p className="text-brand-slate max-w-md text-sm sm:text-base leading-relaxed">
-          Cubrimos cada etapa del desarrollo de software con rigor de ingeniería, código limpio y estándares internacionales.
+          {t("intro")}
         </p>
       </div>
 

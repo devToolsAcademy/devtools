@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useTranslations } from "next-intl";
 
 export default function CtaSection() {
+  const t = useTranslations("Cta");
   const [submitted, setSubmitted] = useState(false);
+  const serviceOptions = t.raw("serviceOptions") as string[];
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -19,15 +22,15 @@ export default function CtaSection() {
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 font-mono text-[10px] sm:text-[11px] text-brand-lime font-bold uppercase tracking-wider mb-4 sm:mb-6">
               <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping"></span>
-              <span>Slots SDLC Q3/Q4 disponibles</span>
+              <span>{t("badge")}</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-6xl lg:text-7xl uppercase leading-[0.95] sm:leading-[0.92] tracking-tighter mb-4 sm:mb-6">
-              TU PRÓXIMO <br />
-              <span className="text-brand-lime">PROYECTO</span> <br />
-              EMPIEZA AQUÍ.
+              {t("titleLine1")} <br />
+              <span className="text-brand-lime">{t("titleHighlight")}</span> <br />
+              {t("titleLine3")}
             </h2>
             <p className="text-gray-300 text-sm sm:text-lg max-w-xl leading-relaxed mb-6 sm:mb-8">
-              Cuéntanos tu requerimiento o agenda una sesión técnica de 15 minutos. Sin comerciales: hablarás directamente con un Tech Lead para analizar alcance y viabilidad técnica.
+              {t("body")}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a
@@ -45,50 +48,49 @@ export default function CtaSection() {
           {/* Quick Form */}
           <div className="lg:col-span-5 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-brand-navy shadow-2xl">
             <h3 className="font-display font-bold text-lg sm:text-xl uppercase tracking-tight mb-1 text-brand-navy">
-              Diagnóstico en 15 Min
+              {t("formTitle")}
             </h3>
             <p className="text-xs text-brand-slate mb-5">
-              Respuesta con Tech Lead en menos de 2 horas hábiles.
+              {t("formSubtitle")}
             </p>
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
                 <label className="block font-mono text-[10px] uppercase font-bold text-brand-slate mb-1">
-                  Nombre o Empresa
+                  {t("nameLabel")}
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="DevTools Client"
+                  placeholder={t("namePlaceholder")}
                   className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy placeholder:text-brand-slate/60 text-xs sm:text-sm focus:border-brand-navy focus:outline-none"
                 />
               </div>
               <div>
                 <label className="block font-mono text-[10px] uppercase font-bold text-brand-slate mb-1">
-                  Correo Electrónico
+                  {t("emailLabel")}
                 </label>
                 <input
                   type="email"
                   required
-                  placeholder="contacto@empresa.com"
+                  placeholder={t("emailPlaceholder")}
                   className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy placeholder:text-brand-slate/60 text-xs sm:text-sm focus:border-brand-navy focus:outline-none"
                 />
               </div>
               <div>
                 <label className="block font-mono text-[10px] uppercase font-bold text-brand-slate mb-1">
-                  Servicio Requerido
+                  {t("serviceLabel")}
                 </label>
                 <select className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy text-xs sm:text-sm focus:border-brand-navy focus:outline-none">
-                  <option>Ciclo de Vida Completo (SDLC)</option>
-                  <option>Plataforma SaaS / Aplicación Web</option>
-                  <option>App Móvil (iOS &amp; Android)</option>
-                  <option>Arquitectura Cloud &amp; DevOps</option>
+                  {serviceOptions.map((option) => (
+                    <option key={option}>{option}</option>
+                  ))}
                 </select>
               </div>
               <button
                 type="submit"
                 className="w-full py-3.5 rounded-xl bg-brand-navy text-white hover:bg-brand-deep font-display font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Solicitar Propuesta</span>
+                <span>{t("submit")}</span>
                 <span className="material-symbols-outlined text-[16px]">
                   arrow_forward
                 </span>
@@ -96,7 +98,7 @@ export default function CtaSection() {
 
               {submitted && (
                 <div className="p-3 rounded-lg bg-brand-lime/30 text-brand-navy font-mono text-xs text-center font-bold">
-                  ✓ ¡Recibido! Nos contactaremos a la brevedad.
+                  {t("success")}
                 </div>
               )}
             </form>

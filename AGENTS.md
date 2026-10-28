@@ -12,7 +12,14 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## What this is
 
-Single-route marketing site for **DevTools**, a Spanish-language software engineering / SDLC studio. `app/page.tsx` is the only route and does nothing but stack 12 components in order. There is **no CMS, no API, no database, no env config, and no test framework** — every section's copy is a hardcoded array or literal inside its component file. Changing content means editing the component.
+Single-route marketing site for **DevTools**, a bilingual (ES/EN) software engineering / SDLC studio. `app/[locale]/page.tsx` is the only route and does nothing but stack 12 components in order. There is **no CMS, no API, no database, no env config, and no test framework** — every section's copy is a hardcoded array or literal inside its component file. Changing content means editing the component.
+
+## Business context and planning docs
+
+The site is the public face of a software development company, shared with prospective clients. Audience: decision makers (CTOs, founders). Goal: conversion to contact. Planning docs (read before related work):
+
+- `docs/CONTENT_STRATEGY.md` — content gaps and priorities. Known: case studies/testimonials are **placeholder data** (not real clients) and the contact form in `CtaSection.tsx` **does not send anything**.
+- `docs/I18N_PLAN.md` — ES/EN plan. **Implemented** with `next-intl` (see "i18n" section below).
 
 Single package, pnpm only (`packageManager: pnpm@11.1.3`). `pnpm-workspace.yaml` contains only `allowBuilds` (denying `sharp`/`unrs-resolver` postinstall scripts) and no `packages:` key — it is not a monorepo, don't add workspace packages there.
 
@@ -38,12 +45,21 @@ Two pre-existing errors and one warning are committed; don't attribute them to y
 
 ## Conventions
 
-- **All UI copy is Spanish.** Keep new strings in Spanish; `<html lang="es">` and metadata `locale: es_ES` in `app/layout.tsx` depend on it.
+- **All UI copy lives in `messages/es.json` and `messages/en.json`** (see "i18n"). Never hardcode user-facing strings in components; add the key to **both** files. Spanish is the source/default language.
+- **Install with `corepack pnpm ...`** if `pnpm` is not on PATH (Windows). Do not run `npm i` (it fails and the project is pnpm-only).
 - **Tailwind v4, no `tailwind.config.js`.** Design tokens live in the `@theme` block in `app/globals.css`: `brand-lime/navy/deep/slate/border/light` plus `font-display`/`font-body`/`font-mono`. Add new tokens there, never in a config file. PostCSS runs via `@tailwindcss/postcss` (`postcss.config.mjs`).
 - **Container/responsive idiom:** every section root is `max-w-[1240px] mx-auto px-4 sm:px-6` with mobile-first breakpoints (`text-3xl sm:text-6xl`, `py-14 sm:py-20`). Match it.
 - **`"use client"` only where interactive** — currently just `Header.tsx` (mobile drawer) and `CtaSection.tsx`. Leave everything else as a server component.
 - **Icons:** no icon package. Icons are Material Symbols Outlined, loaded by a raw `<link>` in `app/layout.tsx`, used as `<span className="material-symbols-outlined text-[18px]">east</span>`. Keep that pattern.
-- **Content arrays live at the top of the component** (`faqs`, `items`, …) and are mapped inline — no separate data files.
+- **Content arrays live in `messages/*.json`** and are read with `t.raw("key") as Type[]`; the component maps them. Purely visual choices (badge colors, highlighted card index) stay in the component, indexed by position.
+
+## i18n (next-intl)
+
+- Locales `es` (default) and `en`, `localePrefix: "always"` → `/es`, `/en`. Config: `i18n/routing.ts`, `i18n/request.ts`, `i18n/navigation.ts`, `proxy.ts` (Next 16 name for middleware), plugin in `next.config.ts`.
+- App lives under `app/[locale]/` (`layout.tsx` renders `<html lang={locale}>`, per-locale metadata, hreflang alternates; `page.tsx` calls `setRequestLocale`). There is no root `app/layout.tsx` on purpose.
+- Server components: `await getTranslations("Namespace")`. Client components (`Header`, `CtaSection`, `LanguageSwitcher`): `useTranslations`. Rich text via `t.rich` with tags like `<strong>`.
+- Internal links to pages use `Link` from `@/i18n/navigation`; section anchors stay plain `<a href="#id">` and ids are **not** translated.
+- `components/LanguageSwitcher.tsx` (desktop header + mobile drawer) switches locale preserving the hash.
 
 ## Anchor navigation is a cross-file contract
 

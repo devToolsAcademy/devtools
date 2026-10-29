@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
 const inter = Inter({
@@ -26,8 +27,7 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["500", "600", "700"],
 });
 
-const OG_LOCALES: Record<string, string> = { es: "es_ES", en: "en_US" };
-const SITE_URL = "https://devtools.tech";
+const OG_LOCALES: Record<string, string> = { es: "es_CO", en: "en_MT" };
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -62,7 +62,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: OG_LOCALES[locale] ?? "es_ES",
+      locale: OG_LOCALES[locale] ?? "es_CO",
       alternateLocale: Object.entries(OG_LOCALES)
         .filter(([key]) => key !== locale)
         .map(([, value]) => value),
@@ -94,6 +94,41 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "DevTools",
+    description:
+      locale === "es"
+        ? "Estudio de ingeniería de software especializado en el desarrollo a medida, arquitectura escalable y ciclo de vida integral (SDLC)."
+        : "Software engineering studio specializing in custom development, scalable architecture, and end-to-end SDLC.",
+    url: `${SITE_URL}/${locale}`,
+    logo: `${SITE_URL}/logotipo-1.png`,
+    image: `${SITE_URL}/logotipo-1.png`,
+    email: "contacto@devtools.tech",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "MT", // Malta (Registered HQ)
+    },
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "Colombia",
+      },
+      {
+        "@type": "Country",
+        name: "Malta",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "European Union",
+      },
+    ],
+    knowsLanguage: ["es", "en"],
+    priceRange: "$$$",
+    sameAs: [],
+  };
+
   return (
     <html
       lang={locale}
@@ -103,6 +138,10 @@ export default async function LocaleLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-brand-navy antialiased selection:bg-brand-lime selection:text-brand-navy">

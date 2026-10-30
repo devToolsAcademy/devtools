@@ -76,6 +76,40 @@ export default async function MethodologySection() {
           );
         })}
       </div>
+
+      {/* Estimated Timelines Strip */}
+      <div className="mt-8 sm:mt-10 p-5 sm:p-6 rounded-3xl bg-brand-light border border-brand-border flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-2xl bg-white border border-brand-border flex items-center justify-center text-brand-navy shadow-sm">
+            <span className="material-symbols-outlined text-[20px] text-brand-lime">
+              schedule
+            </span>
+          </div>
+          <div>
+            <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-brand-slate font-bold">
+              {t("timelineBannerEyebrow")}
+            </div>
+            <div className="font-display font-bold text-sm sm:text-base text-brand-navy">
+              {t("timelineBannerTitle")}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 font-mono text-[11px] sm:text-xs">
+          <div className="px-3.5 py-2 rounded-xl bg-white border border-brand-border text-brand-navy shadow-sm">
+            <span className="text-brand-slate uppercase text-[10px] block font-semibold">{t("timelineMvpLabel")}</span>
+            <span className="font-bold text-brand-navy">{t("timelineMvpValue")}</span>
+          </div>
+          <div className="px-3.5 py-2 rounded-xl bg-white border border-brand-border text-brand-navy shadow-sm">
+            <span className="text-brand-slate uppercase text-[10px] block font-semibold">{t("timelineSaasLabel")}</span>
+            <span className="font-bold text-brand-navy">{t("timelineSaasValue")}</span>
+          </div>
+          <div className="px-3.5 py-2 rounded-xl bg-white border border-brand-border text-brand-navy shadow-sm">
+            <span className="text-brand-slate uppercase text-[10px] block font-semibold">{t("timelineAuditLabel")}</span>
+            <span className="font-bold text-brand-navy">{t("timelineAuditValue")}</span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

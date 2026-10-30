@@ -28,13 +28,12 @@
     "isotypeAlt": "DevTools Isotype",
     "nav": {
       "services": "Services",
-      "availability": "Availability",
       "methodology": "SDLC Method",
       "cases": "Cases",
       "faq": "FAQ"
     },
-    "slotsBadge": "Q3/Q4 · 2 SDLC SLOTS",
-    "slotsBadgeMobile": "Q3/Q4 · 2 SDLC SLOTS AVAILABLE",
+    "slotsBadge": "ENGINEERING & SDLC",
+    "slotsBadgeMobile": "SDLC ENGINEERING STUDIO",
     "cta": "Tech Assessment",
     "ctaMobile": "Book a Tech Assessment",
     "openMenu": "Open menu"
@@ -108,41 +107,18 @@
       }
     ]
   },
-  "Availability": {
-    "eyebrow": "SLOTS & AVAILABILITY // CAPACITY",
-    "title": "SPRINT CALENDAR.",
-    "intro": "We guarantee direct attention from senior software engineers by limiting the number of active projects per quarter.",
-    "modality": "MODALITY",
-    "duration": "DURATION",
-    "reserve": "Reserve Slot",
-    "slots": [
-      {
-        "title": "Initial MVP Sprint",
-        "subtitle": "Fast, validated launch",
-        "modality": "Remote / Daily Sync",
-        "duration": "4 – 6 Weeks",
-        "status": "AVAILABLE Q3"
-      },
-      {
-        "title": "Enterprise SaaS Sprint",
-        "subtitle": "Full multi-tenant architecture",
-        "modality": "Dedicated Senior Team",
-        "duration": "8 – 12 Weeks",
-        "status": "1 SLOT LEFT"
-      },
-      {
-        "title": "Audit & SDLC Refactor Sprint",
-        "subtitle": "Technical debt and infrastructure cleanup",
-        "modality": "Assessment + Execution",
-        "duration": "3 – 4 Weeks",
-        "status": "EARLY BOOKING"
-      }
-    ]
-  },
   "Methodology": {
     "eyebrow": "02 / SDLC METHODOLOGY",
     "title": "SOFTWARE LIFECYCLE.",
     "intro": "A structured process in 4 transparent phases to ensure predictability, quality and speed without technical debt.",
+    "timelineBannerEyebrow": "ESTIMATED DELIVERY TIMELINES",
+    "timelineBannerTitle": "Referential duration based on project scope",
+    "timelineMvpLabel": "MVP Sprint",
+    "timelineMvpValue": "4 – 6 Weeks",
+    "timelineSaasLabel": "Enterprise SaaS",
+    "timelineSaasValue": "8 – 12 Weeks",
+    "timelineAuditLabel": "Audit & Refactor",
+    "timelineAuditValue": "3 – 4 Weeks",
     "steps": [
       {
         "num": "01",
@@ -249,7 +225,7 @@
     ]
   },
   "Cta": {
-    "badge": "SDLC slots available for Q3/Q4",
+    "badge": "SDLC Engineering & Consulting",
     "titleLine1": "YOUR NEXT",
     "titleHighlight": "PROJECT",
     "titleLine3": "STARTS HERE.",
@@ -278,7 +254,6 @@
     "nav": {
       "services": "Technology Solutions",
       "methodology": "Lifecycle Method (SDLC)",
-      "availability": "Sprint Availability",
       "cases": "Success Stories",
       "faq": "Frequently Asked Questions"
     },

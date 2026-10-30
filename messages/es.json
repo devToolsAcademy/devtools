@@ -28,13 +28,12 @@
     "isotypeAlt": "DevTools Isotipo",
     "nav": {
       "services": "Servicios",
-      "availability": "Disponibilidad",
       "methodology": "Método SDLC",
       "cases": "Casos",
       "faq": "FAQ"
     },
-    "slotsBadge": "Q3/Q4 · 2 CUPOS SDLC",
-    "slotsBadgeMobile": "Q3/Q4 · 2 CUPOS SDLC DISPONIBLES",
+    "slotsBadge": "INGENIERÍA & SDLC",
+    "slotsBadgeMobile": "ESTUDIO DE INGENIERÍA SDLC",
     "cta": "Diagnóstico Tech",
     "ctaMobile": "Agendar Diagnóstico Tech",
     "openMenu": "Abrir menú"
@@ -108,41 +107,18 @@
       }
     ]
   },
-  "Availability": {
-    "eyebrow": "SLOTS & DISPONIBILIDAD // CAPACIDAD",
-    "title": "CALENDARIO DE SPRINTS.",
-    "intro": "Garantizamos atención directa de ingenieros de software sénior limitando los proyectos activos por trimestre.",
-    "modality": "MODALIDAD",
-    "duration": "DURACIÓN",
-    "reserve": "Reservar Slot",
-    "slots": [
-      {
-        "title": "Sprint MVP Inicial",
-        "subtitle": "Lanzamiento rápido y validado",
-        "modality": "Remoto / Sync Diario",
-        "duration": "4 – 6 Semanas",
-        "status": "DISPONIBLE Q3"
-      },
-      {
-        "title": "Sprint SaaS Enterprise",
-        "subtitle": "Arquitectura multi-tenant completa",
-        "modality": "Equipo Dedicado Senior",
-        "duration": "8 – 12 Semanas",
-        "status": "1 CUPO RESTANTE"
-      },
-      {
-        "title": "Sprint Auditoría & SDLC Refactor",
-        "subtitle": "Eliminación de deuda técnica e infraestructura",
-        "modality": "Diagnóstico + Execution",
-        "duration": "3 – 4 Semanas",
-        "status": "RESERVA ANTICIPADA"
-      }
-    ]
-  },
   "Methodology": {
     "eyebrow": "02 / METODOLOGÍA SDLC",
     "title": "CICLO DE VIDA DE SOFTWARE.",
     "intro": "Proceso estructurado en 4 fases transparentes para asegurar previsibilidad, calidad y velocidad sin deuda técnica.",
+    "timelineBannerEyebrow": "TIEMPOS ESTIMADOS DE ENTREGA",
+    "timelineBannerTitle": "Estimación referencial según el alcance del proyecto",
+    "timelineMvpLabel": "Sprint MVP",
+    "timelineMvpValue": "4 – 6 Semanas",
+    "timelineSaasLabel": "SaaS Enterprise",
+    "timelineSaasValue": "8 – 12 Semanas",
+    "timelineAuditLabel": "Auditoría & Refactor",
+    "timelineAuditValue": "3 – 4 Semanas",
     "steps": [
       {
         "num": "01",
@@ -249,7 +225,7 @@
     ]
   },
   "Cta": {
-    "badge": "Slots SDLC Q3/Q4 disponibles",
+    "badge": "Acompañamiento SDLC & Ingeniería",
     "titleLine1": "TU PRÓXIMO",
     "titleHighlight": "PROYECTO",
     "titleLine3": "EMPIEZA AQUÍ.",
@@ -278,7 +254,6 @@
     "nav": {
       "services": "Soluciones Tecnológicas",
       "methodology": "Método Ciclo de Vida (SDLC)",
-      "availability": "Disponibilidad de Sprints",
       "cases": "Casos de Éxito",
       "faq": "Preguntas Frecuentes"
     },

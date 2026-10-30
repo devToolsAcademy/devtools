@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import MarqueeTicker from "@/components/MarqueeTicker";
 import ManifestoSection from "@/components/ManifestoSection";
 import ServicesSection from "@/components/ServicesSection";
-import AvailabilitySection from "@/components/AvailabilitySection";
 import MethodologySection from "@/components/MethodologySection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -42,17 +41,15 @@ export default async function Home({
               <ServicesSection />
             </ScrollReveal>
             <ScrollReveal>
-              <AvailabilitySection />
-            </ScrollReveal>
-            <ScrollReveal>
               <MethodologySection />
             </ScrollReveal>
             <ScrollReveal>
               <CaseStudiesSection />
             </ScrollReveal>
-            <ScrollReveal>
+            {/* Testimonios / Reviews: Comentado temporalmente hasta recopilar testimonios reales */}
+            {/* <ScrollReveal>
               <TestimonialsSection />
-            </ScrollReveal>
+            </ScrollReveal> */}
             <ScrollReveal>
               <FaqSection />
             </ScrollReveal>

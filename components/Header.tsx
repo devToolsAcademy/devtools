@@ -50,12 +50,6 @@ export default function Header() {
             {t("nav.services")}
           </a>
           <a
-            href="#disponibilidad"
-            className="hover:text-brand-navy transition-colors"
-          >
-            {t("nav.availability")}
-          </a>
-          <a
             href="#metodologia"
             className="hover:text-brand-navy transition-colors"
           >
@@ -126,14 +120,7 @@ export default function Header() {
             <span>{t("nav.services")}</span>
             <span className="material-symbols-outlined text-xs">chevron_right</span>
           </a>
-          <a
-            href="#disponibilidad"
-            onClick={closeMenu}
-            className="py-2 border-b border-brand-border/40 hover:text-brand-slate transition-colors flex items-center justify-between"
-          >
-            <span>{t("nav.availability")}</span>
-            <span className="material-symbols-outlined text-xs">chevron_right</span>
-          </a>
+
           <a
             href="#metodologia"
             onClick={closeMenu}

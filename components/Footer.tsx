@@ -38,11 +38,7 @@ export default async function Footer() {
                   {t("nav.methodology")}
                 </a>
               </li>
-              <li>
-                <a href="#disponibilidad" className="hover:text-brand-navy transition-colors">
-                  {t("nav.availability")}
-                </a>
-              </li>
+
               <li>
                 <a href="#casos" className="hover:text-brand-navy transition-colors">
                   {t("nav.cases")}

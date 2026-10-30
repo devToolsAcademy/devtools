@@ -177,24 +177,24 @@
   "CaseStudies": {
     "eyebrow": "03 / PRODUCTION SUCCESS STORIES",
     "title": "AUDITED CASES.",
-    "intro": "Real impact metrics delivered to fast-growing technology companies.",
-    "mainTag": "B2B FINTECH",
-    "mainDelivery": "DELIVERED IN 6 WEEKS",
-    "mainTitle": "PaySync: -65% Latency and 150k transactions with zero downtime.",
-    "mainQuote": "“DevTools designed and implemented the new architecture in 6 weeks. The code quality and the test suite exceeded all our expectations.”",
-    "mainAuthorInitials": "MR",
-    "mainAuthorName": "Matías Rojas",
-    "mainAuthorRole": "CTO at PaySync Technologies",
+    "intro": "End-to-end software engineering and bespoke frontend solutions across Malta and Colombia.",
+    "mainTag": "MALTA · FULL STACK & CLOUD",
+    "mainDelivery": "END-TO-END CLOUDFLARE DEPLOYMENT",
+    "mainTitle": "StayFresh (Stacare Group): Complete order management and operations platform.",
+    "mainQuote": "“DevTools engineered the full platform: frontend, backend, resilient database architecture, domain management, and automated Cloudflare deployment powering StayFresh daily laundry operations.”",
+    "mainAuthorInitials": "SG",
+    "mainAuthorName": "Stacare Group",
+    "mainAuthorRole": "Malta Operations · StayFresh",
     "secondary": [
       {
-        "label": "LogiRoute // IoT & Telemetry",
-        "title": "-$45,000 USD/year in cloud costs",
-        "description": "We optimized the real-time event pipeline and refactored the core microservices."
+        "label": "Enerlitica // Colombia",
+        "title": "Custom Frontend Ecosystem & Dashboards",
+        "description": "Engineering multiple specialized frontend interfaces: analytics dashboards and high-performance business presentation portals."
       },
       {
-        "label": "SalusCloud // HealthTech SaaS",
-        "title": "25,000 active users & 0 outages",
-        "description": "HIPAA standards implementation and a database architecture resilient to demand spikes."
+        "label": "SDLC // Global Standards",
+        "title": "100% Client Ownership & Automated CI/CD",
+        "description": "Modular architecture, zero-downtime releases, and complete technical handover from day one."
       }
     ]
   },

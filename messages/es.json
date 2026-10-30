@@ -177,24 +177,24 @@
   "CaseStudies": {
     "eyebrow": "03 / HISTORIAS DE ÉXITO EN PRODUCCIÓN",
     "title": "CASOS AUDITADOS.",
-    "intro": "Métricas reales de impacto entregadas a empresas tecnológicas de rápido crecimiento.",
-    "mainTag": "FINTECH B2B",
-    "mainDelivery": "ENTREGA EN 6 SEMANAS",
-    "mainTitle": "PaySync: -65% Latencia y 150k transacciones sin caídas.",
-    "mainQuote": "“DevTools diseñó e implementó la nueva arquitectura en 6 semanas. La calidad del código y la suite de pruebas superaron todas nuestras expectativas.”",
-    "mainAuthorInitials": "MR",
-    "mainAuthorName": "Matías Rojas",
-    "mainAuthorRole": "CTO en PaySync Technologies",
+    "intro": "Ingeniería de software de extremo a extremo y soluciones frontend a medida en Malta y Colombia.",
+    "mainTag": "MALTA · FULL STACK & CLOUD",
+    "mainDelivery": "DESPLIEGUE CLOUDFLARE END-TO-END",
+    "mainTitle": "StayFresh (Stacare Group): Sistema integral de gestión de órdenes y operativa.",
+    "mainQuote": "“DevTools desarrolló la plataforma completa: arquitectura frontend, backend, base de datos resiliente, dominio y despliegue automatizado con Cloudflare para la operativa diaria de lavandería de StayFresh.”",
+    "mainAuthorInitials": "SG",
+    "mainAuthorName": "Stacare Group",
+    "mainAuthorRole": "Malta Operations · StayFresh",
     "secondary": [
       {
-        "label": "LogiRoute // IoT & Telemetría",
-        "title": "-$45,000 USD/año en costes cloud",
-        "description": "Optimizamos la canalización de eventos en tiempo real y refactorizamos los microservicios core."
+        "label": "Enerlitica // Colombia",
+        "title": "Ecosistema Frontend & Dashboards a Medida",
+        "description": "Desarrollo de múltiples interfaces frontend especializadas: dashboards analíticos y portales de presentación de negocio de alto rendimiento."
       },
       {
-        "label": "SalusCloud // HealthTech SaaS",
-        "title": "25,000 usuarios activos & 0 caídas",
-        "description": "Implementación de estándares HIPAA y arquitectura de base de datos resiliente ante picos de demanda."
+        "label": "SDLC // Global Standards",
+        "title": "100% Código Propio & CI/CD Automatizado",
+        "description": "Arquitectura modular, despliegues sin interrupciones y transferencia total de propiedad técnica desde el primer día."
       }
     ]
   },

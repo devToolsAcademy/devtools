@@ -75,8 +75,8 @@ pnpm exec tsc --noEmit   # fast standalone typecheck; there is NO `typecheck` sc
 
 ## i18n (next-intl)
 
-- Locales `es` (default) and `en`, `localePrefix: "always"` → `/es`, `/en`. Config: `i18n/routing.ts`, `i18n/request.ts`, `i18n/navigation.ts`, `proxy.ts` (Next 16 name for middleware), plugin in `next.config.ts`.
-- App lives under `app/[locale]/` (`layout.tsx` renders `<html lang={locale}>`, per-locale metadata, hreflang alternates; `page.tsx` calls `setRequestLocale`). There is no root `app/layout.tsx` on purpose.
+- Locales `es` (default) and `en`, `localePrefix: "always"` → `/es`, `/en`. Config: `i18n/routing.ts`, `i18n/request.ts`, `i18n/navigation.ts`, plugin in `next.config.ts` (`output: "export"` static export into `out/`).
+- App lives under `app/[locale]/` (`layout.tsx` renders `<html lang={locale}>`, per-locale metadata, hreflang alternates; `page.tsx` calls `setRequestLocale`). Root `app/layout.tsx` passes `children` through and `app/page.tsx` statically redirects `/` to `/es` or `/en` based on browser language.
 - Server components: `await getTranslations("Namespace")`. Client components (`Header`, `CtaSection`, `LanguageSwitcher`): `useTranslations`. Rich text via `t.rich` with tags like `<strong>`.
 - Internal links to pages use `Link` from `@/i18n/navigation`; section anchors stay plain `<a href="#id">` and ids are **not** translated.
 - `components/LanguageSwitcher.tsx` (desktop header + mobile drawer) switches locale preserving the hash.
@@ -88,7 +88,7 @@ pnpm exec tsc --noEmit   # fast standalone typecheck; there is NO `typecheck` sc
 - `app/sitemap.ts` and `app/robots.ts` generate multilingual sitemap and robots rules with `hreflang` and `x-default`.
 - Structured Data: `app/[locale]/layout.tsx` injects Schema.org JSON-LD (`ProfessionalService`) configured with Malta HQ and service areas covering Colombia, Malta, and the EU.
 - Open Graph locales: configured per language (`es_CO` for Spanish / Colombia, `en_MT` for English / Malta).
-- HTTP Security Headers: configured in `next.config.ts` (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`).
+- HTTP Security Headers: configured in `public/_headers` for Cloudflare Pages (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`).
 
 ## Anchor navigation is a cross-file contract
 
@@ -102,4 +102,4 @@ Numbered eyebrow labels use `NN / UPPERCASE` in `font-mono` (`01 / CAPACIDADES T
 
 - `animate-in slide-in-from-top-2` on the mobile drawer (`components/Header.tsx`) are **`tailwindcss-animate` utilities that are not installed** — they emit nothing and the drawer just appears. Don't assume those classes work, and don't "fix" the drawer by assuming a plugin is present.
 - `next-env.d.ts` and `.next/types/*` are generated and gitignored. Never edit or commit them; they're rewritten by `next dev` / `next build`.
-- `next.config.ts` configures `next-intl` and HTTP security headers (`headers()`), with no experimental flags or cache components enabled. Turning on a flag is a real architectural change, not a tweak.
+- `next.config.ts` configures `next-intl` and `output: "export"` (static export to `out/` for Cloudflare Pages), with no experimental flags or cache components enabled. Turning on a flag is a real architectural change, not a tweak.

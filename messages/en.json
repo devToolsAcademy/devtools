@@ -229,9 +229,9 @@
     "titleLine1": "YOUR NEXT",
     "titleHighlight": "PROJECT",
     "titleLine3": "STARTS HERE.",
-    "body": "Tell us what you need or book a 15-minute technical session. No sales pitch: you will speak directly with a Tech Lead to analyze scope and technical feasibility.",
-    "formTitle": "15-Min Assessment",
-    "formSubtitle": "Reply from a Tech Lead within 2 business hours.",
+    "body": "Tell us what you want to build or the technical challenge you need to solve. Speak directly with our engineering team to evaluate scope, architecture, and the best path forward for your project.",
+    "formTitle": "Let's Discuss Your Project",
+    "formSubtitle": "Leave your details and start a direct conversation with our engineering team.",
     "nameLabel": "Name or Company",
     "namePlaceholder": "DevTools Client",
     "emailLabel": "Email Address",
@@ -243,8 +243,9 @@
       "Mobile App (iOS & Android)",
       "Cloud Architecture & DevOps"
     ],
+    "whatsappIntro": "Hi DevTools, I would like to request a technical assessment:",
     "submit": "Request a Proposal",
-    "success": "✓ Received! We will get back to you shortly."
+    "success": "✓ Opening WhatsApp with your request details..."
   },
   "Footer": {
     "logoAlt": "DevTools Logotype",

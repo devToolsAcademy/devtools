@@ -2,15 +2,40 @@
 
 import { useState, FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import { WHATSAPP_NUMBER } from "@/lib/site";
 
 export default function CtaSection() {
   const t = useTranslations("Cta");
   const [submitted, setSubmitted] = useState(false);
   const serviceOptions = t.raw("serviceOptions") as string[];
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const cleanName = String(formData.get("name") ?? "")
+      .trim()
+      .slice(0, 100);
+    const cleanEmail = String(formData.get("email") ?? "")
+      .trim()
+      .slice(0, 150);
+    const rawService = String(formData.get("service") ?? "").trim();
+    const cleanService = serviceOptions.includes(rawService)
+      ? rawService
+      : (serviceOptions[0] ?? "");
+
+    if (!cleanName || !cleanEmail) return;
+
+    const message = [
+      t("whatsappIntro"),
+      `• ${t("nameLabel")}: ${cleanName}`,
+      `• ${t("emailLabel")}: ${cleanEmail}`,
+      `• ${t("serviceLabel")}: ${cleanService}`,
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
+    e.currentTarget.reset();
   };
 
   return (
@@ -34,13 +59,13 @@ export default function CtaSection() {
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="mailto:contacto@devtools.tech"
+                href="mailto:info@devtoolsgroup.com"
                 className="w-full sm:w-auto text-center px-6 py-3.5 sm:py-4 rounded-full bg-brand-lime text-brand-navy font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider hover:bg-white transition-all shadow-xl flex items-center justify-center gap-2"
               >
                 <span className="material-symbols-outlined text-[18px]">
                   mail
                 </span>
-                <span>contacto@devtools.tech</span>
+                <span>info@devtoolsgroup.com</span>
               </a>
             </div>
           </div>
@@ -60,7 +85,9 @@ export default function CtaSection() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
+                  maxLength={100}
                   placeholder={t("namePlaceholder")}
                   className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy placeholder:text-brand-slate/60 text-xs sm:text-sm focus:border-brand-navy focus:outline-none"
                 />
@@ -71,7 +98,9 @@ export default function CtaSection() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
+                  maxLength={150}
                   placeholder={t("emailPlaceholder")}
                   className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy placeholder:text-brand-slate/60 text-xs sm:text-sm focus:border-brand-navy focus:outline-none"
                 />
@@ -80,9 +109,15 @@ export default function CtaSection() {
                 <label className="block font-mono text-[10px] uppercase font-bold text-brand-slate mb-1">
                   {t("serviceLabel")}
                 </label>
-                <select className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy text-xs sm:text-sm focus:border-brand-navy focus:outline-none">
+                <select
+                  name="service"
+                  defaultValue={serviceOptions[0]}
+                  className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-brand-light text-brand-navy text-xs sm:text-sm focus:border-brand-navy focus:outline-none"
+                >
                   {serviceOptions.map((option) => (
-                    <option key={option}>{option}</option>
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
                   ))}
                 </select>
               </div>

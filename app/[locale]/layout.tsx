@@ -105,7 +105,7 @@ export default async function LocaleLayout({
     url: `${SITE_URL}/${locale}`,
     logo: `${SITE_URL}/logotipo-1.png`,
     image: `${SITE_URL}/logotipo-1.png`,
-    email: "contacto@devtools.tech",
+    email: "info@devtoolsgroup.com",
     address: {
       "@type": "PostalAddress",
       addressCountry: "MT", // Malta (Registered HQ)
@@ -141,7 +141,9 @@ export default async function LocaleLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-brand-navy antialiased selection:bg-brand-lime selection:text-brand-navy">

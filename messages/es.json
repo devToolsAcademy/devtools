@@ -229,9 +229,9 @@
     "titleLine1": "TU PRÓXIMO",
     "titleHighlight": "PROYECTO",
     "titleLine3": "EMPIEZA AQUÍ.",
-    "body": "Cuéntanos tu requerimiento o agenda una sesión técnica de 15 minutos. Sin comerciales: hablarás directamente con un Tech Lead para analizar alcance y viabilidad técnica.",
-    "formTitle": "Diagnóstico en 15 Min",
-    "formSubtitle": "Respuesta con Tech Lead en menos de 2 horas hábiles.",
+    "body": "Cuéntanos qué quieres construir o qué reto técnico necesitas resolver. Habla directamente con nuestro equipo de ingeniería para evaluar el alcance, la arquitectura y la mejor ruta para tu proyecto.",
+    "formTitle": "Hablemos de tu Proyecto",
+    "formSubtitle": "Déjanos tus datos e inicia la conversación directamente con nuestro equipo.",
     "nameLabel": "Nombre o Empresa",
     "namePlaceholder": "DevTools Client",
     "emailLabel": "Correo Electrónico",
@@ -243,8 +243,9 @@
       "App Móvil (iOS & Android)",
       "Arquitectura Cloud & DevOps"
     ],
+    "whatsappIntro": "Hola DevTools, me gustaría solicitar un diagnóstico técnico:",
     "submit": "Solicitar Propuesta",
-    "success": "✓ ¡Recibido! Nos contactaremos a la brevedad."
+    "success": "✓ Abriendo WhatsApp con los datos de tu solicitud..."
   },
   "Footer": {
     "logoAlt": "DevTools Logotipo",

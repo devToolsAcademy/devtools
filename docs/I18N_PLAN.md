@@ -1,6 +1,6 @@
 # Plan de internacionalización (ES → ES + EN)
 
-> Estado: **fases 1–6 implementadas** (decisiones: `localePrefix: "always"`, `next-intl`). Pendiente: revisión humana de `messages/en.json`, `sitemap`/`robots` y QA visual de textos largos en EN.
+> Estado: **Implementado al 100%** (`localePrefix: "always"`, `next-intl`, `messages/es.json` + `messages/en.json`, `sitemap.ts` y `robots.ts` con `hreflang`).
 >
 > Notas originales: Antes de codificar, leer la guía de i18n en `node_modules/next/dist/docs/` (Next 16 tiene cambios: p. ej. `middleware` pasó a llamarse `proxy`). Verificar la compatibilidad de la versión de `next-intl` con Next 16.3.
 
@@ -68,8 +68,3 @@ Decisiones:
 - Datos de casos/testimonios: traducirlos como contenido (los nombres no).
 - Formato de números/moneda (`-$45,000 USD`): usar `Intl`/`useFormatter` por idioma.
 - Estimación: ~1–2 días con infraestructura + extracción; la traducción/revisión depende del volumen de contenido nuevo.
-
-## 6. Decisión pendiente
-
-- ¿`localePrefix: "always"` (recomendado) o `as-needed` (ES sin prefijo en `/`)?
-- ¿`next-intl` (recomendado) o solución propia?

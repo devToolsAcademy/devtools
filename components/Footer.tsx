@@ -61,7 +61,7 @@ export default async function Footer() {
               {t("contactText")}
             </p>
             <div className="font-mono text-xs font-bold text-brand-navy">
-              contacto@devtools.tech
+              info@devtoolsgroup.com
             </div>
           </div>
         </div>
